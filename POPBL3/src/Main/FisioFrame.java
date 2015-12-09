@@ -21,7 +21,7 @@ public class FisioFrame extends JDialog implements ActionListener {
 	JButton bAñadir, bEliminar, bModificar;
 	JPanel jPrincipal, jIzkierda, jCentro, jBotones;
 	JLabel lEjercicio;
-	
+	int ABC = 0;
 	public FisioFrame(JFrame principal){
 		super(principal, "Panel del Fisioterapeuta");
 		bAñadir = new JButton("Añadir");
