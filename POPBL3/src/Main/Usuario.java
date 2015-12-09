@@ -2,9 +2,8 @@ package Main;
 
 public abstract class Usuario {
 	private String nombre, apellido1, apellido2, userName, centro;
-
-	int asdasd = 0;
-	int a =22;
+	int a = 4;
+	int v= 2;
 
 	public Usuario(String userName, String nombre, String apellido1, String apellido2, String centro) {
 		this.nombre = nombre;
