@@ -21,7 +21,7 @@ public abstract class Usuario {
 		this.centro = getCentro();
 	}
 
-	private String getCentro() {
+	public String getCentro() {
 	if (centro == null)
 			centro = cargarCentro();
 		return centro;

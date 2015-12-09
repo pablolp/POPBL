@@ -8,6 +8,14 @@ public class Paciente extends Usuario {
 		super(userName, nombre, apellido1, apellido2, centro);
 		this.ejercicios = ejercicios;
 	}
+	
+	public void setPaciente(Paciente paciente){
+		super.setUserName(paciente.getUserName());
+		super.setNombre(paciente.getNombre());
+		super.setApellido1(paciente.getApellido1());
+		super.setApellido2(paciente.getApellido2());
+		super.setCentro(paciente.getCentro());
+	}
 
 	public Paciente(String userName) {
 		super(userName);
