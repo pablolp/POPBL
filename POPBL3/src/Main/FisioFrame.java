@@ -124,10 +124,27 @@ public class FisioFrame  implements ActionListener, ListSelectionListener{
 			int indice = pacientes.getSelectedIndex();
 			if(indice != FALLO){
 				AñadePacienteFrame paciente = new AñadePacienteFrame(ventana, modelo.getElementAt(indice));
-				modelo.getElementAt(indice).setPaciente(paciente.getPaciente());
-				ventana.repaint();
+				if(cambios(paciente.getPaciente(), modelo.getElementAt(indice))){
+					modelo.getElementAt(indice).setPaciente(paciente.getPaciente());
+					ventana.repaint();
+				}
 			}
 		}
+	}
+	
+	private boolean cambios(Paciente paciente, Paciente paciente2) {
+		if(paciente.getNombre().equals(paciente2.getNombre())){
+			if(paciente.getApellido1().equals(paciente2.getApellido1())){
+				if(paciente.getApellido2().equals(paciente2.getApellido2())){
+					if(paciente.getCentro().equals(paciente2.getCentro())){
+						if(paciente.getUserName().equals(paciente2.getUserName())){
+							return false;
+						}
+					}
+				}
+			}
+		}
+		return true;
 	}
 	
 	public void valueChanged(ListSelectionEvent evento) {
