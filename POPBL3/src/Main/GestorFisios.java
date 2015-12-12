@@ -3,7 +3,9 @@ package Main;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.swing.DefaultListModel;
 
@@ -19,7 +21,21 @@ public class GestorFisios extends DefaultListModel<Fisio>{
 		cargarFisios(0,20);
 	}
 	public void guardarFisio(){
-		
+		PrintWriter fichero = null;
+		Fisio objeto;
+		try {
+			fichero = new PrintWriter(new FileWriter("criaturas.txt"));
+			for (int i = 0; i < this.size(); i++) {
+				
+				objeto = this.get(i);
+				fichero.println(objeto.guardar());
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			fichero.close();
+		}
 	}
 	public void cargarFisios(int i, int j) {
 		

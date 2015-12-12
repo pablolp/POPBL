@@ -10,6 +10,10 @@ public class Fisio extends Usuario {
 		super(userName);
 		// TODO Auto-generated constructor stub
 	}
+	public String guardar() {
+		
+		return super.guardar();
+	}
 	
 
 }

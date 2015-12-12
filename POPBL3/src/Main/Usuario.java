@@ -12,6 +12,8 @@ public abstract class Usuario {
 		this.userName = userName;
 		this.centro = centro;
 	}
+	
+	
 
 	public Usuario(String userName) {
 		this.nombre = getNombre();
@@ -86,6 +88,13 @@ public abstract class Usuario {
 
 	public void setCentro(String centro) {
 		this.centro = centro;
+	}
+
+
+
+	public String guardar() {
+		
+		return userName+nombre+apellido1+apellido2+centro;
 	}
 
 }
