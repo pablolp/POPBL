@@ -1,6 +1,7 @@
 package Main;
 
 public abstract class Usuario {
+	final String SEPARADOR = "$";
 	private String nombre, apellido1, apellido2, userName, centro;
 	int a = 4;
 	int v= 2;
@@ -89,12 +90,14 @@ public abstract class Usuario {
 	public void setCentro(String centro) {
 		this.centro = centro;
 	}
+	
+	@Override
+	public String toString() {
+		return  nombre+ " " + apellido1 +" "+ apellido2 ;
+	}
 
-
-
-	public String guardar() {
-		
-		return userName+nombre+apellido1+apellido2+centro;
+	public String guardar() {		
+		return userName+SEPARADOR+nombre+SEPARADOR+apellido1+SEPARADOR+apellido2+SEPARADOR+centro;
 	}
 
 }
